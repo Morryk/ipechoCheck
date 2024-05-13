@@ -10,6 +10,6 @@ Effettua un check ogni n-secondi.
 # Installation
 > <code>git clone https://github.com/Morryk/ipechoCheck</code>
 > 
-> <code>cd ipechoCheck</code>
+> <code>cd ipecho</code>
 > 
-> <code>chmod +x ipechoCheck.sh</code>
+> <code>chmod +x ipecho.sh</code>

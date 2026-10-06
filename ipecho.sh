@@ -3,12 +3,17 @@
 figlet ipechoCheck
 
 KILL_SWITCH=false
+RESTORE_NM=false
 INTERVAL=0
 
 while [[ $# -gt 0 ]]; do
     case $1 in
         -k|--kill-switch)
             KILL_SWITCH=true
+            shift
+            ;;
+        -r|--restore)
+            RESTORE_NM=true
             shift
             ;;
         *)
@@ -19,6 +24,12 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+if [[ "$RESTORE_NM" == true ]]; then
+    systemctl start NetworkManager
+    echo "NetworkManager started"
+    exit 0
+fi
 
 IP_FILE="/tmp/ipecho_initial_ip_$$"
 

@@ -2,6 +2,7 @@
 
 figlet ipechoCheck
 
+LOG_FILE="$PWD/logIp.log"
 KILL_SWITCH=false
 RESTORE_NM=false
 INTERVAL=0
@@ -44,7 +45,7 @@ get_ip() {
 
 log() {
     local data=$(date +"%d/%m/%y %T - ")
-    echo "$data$1" >> logIp.log
+    echo "$data$1" >> "LOG_FILE"
 }
 
 initial_ip=$(get_ip)
